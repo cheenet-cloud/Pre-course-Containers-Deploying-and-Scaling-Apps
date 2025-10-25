@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .image-container {
+            margin: 30px 0;
+        }
+        
+        .thumbs-up-image {
+            max-width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dynamic-text {
+            font-size: 1.3em;
+            font-style: italic;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            border-left: 5px solid #ffd700;
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .repo-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+        }
+        
+        .repo-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.6);
+        }
+        
+        .refresh-hint {
+            margin-top: 20px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .server-info {
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Workshop01</h1>
+        
+        <div class="image-container">
+            <img src="<%= imageUrl %>" alt="Thumbs Up" class="thumbs-up-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display: none; padding: 20px; background: rgba(255,255,255,0.2); border-radius: 10px;">
+                <p>🖼️ Image not found: thumbs-up-gif-6.gif</p>
+                <p>Please ensure the image file is in the public directory</p>
+            </div>
+        </div>
+        
+        <div class="dynamic-text">
+            <%= quote %>
+        </div>
+        
+        <a href="<%= repoUrl %>" class="repo-link" target="_blank">
+            🚀 Visit Repository
+        </a>
+        
+        <p class="refresh-hint">💡 Refresh the page to see a different quote!</p>
+        
+        <div class="server-info">
+            🖥️ <strong>Server-Side Rendered</strong> - This page is generated on the server using Node.js & Express
+        </div>
+    </div>
+</body>
+</html>

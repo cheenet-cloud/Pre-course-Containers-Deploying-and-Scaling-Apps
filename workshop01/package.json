@@ -1,0 +1,17 @@
+{
+  "name": "workshop01-server",
+  "version": "1.0.0",
+  "description": "Server-based web application for Workshop01 landing page",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": ["express", "server", "workshop"],
+  "author": "Workshop01",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ejs": "^3.1.9"
+  }
+}
