@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
         title: 'Workshop01 Landing Page',
         quote: randomQuote,
         repoUrl: repositoryUrl,
-        imageUrl: '/static/thumbs-up-gif-6.gif'
+        imageUrl: 'Pre-course-Containers-Deploying-and-Scaling-Apps\workshop01\views\Thumbs-UP-PNG-Transparent-Image.png'
     });
 });
 
